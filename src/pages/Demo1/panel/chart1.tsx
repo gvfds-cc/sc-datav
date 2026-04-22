@@ -13,8 +13,6 @@ import {
 } from "echarts/components";
 import { LabelLayout } from "echarts/features";
 
-import cityData from "../cityData";
-
 type BarOption = ComposeOption<
   | PictorialBarSeriesOption
   | BarSeriesOption
@@ -22,14 +20,15 @@ type BarOption = ComposeOption<
   | GridComponentOption
 >;
 
-const colors = ["#fbdf88", "#ea580c"];
+const colors = ["#86efac", "#16a34a"];
 
-const citys = Object.keys(cityData);
-
-const data = Array.from({ length: 5 }, (_, k) => ({
-  name: citys[k],
-  value: cityData[citys[k] as keyof typeof cityData].population,
-}));
+const data = [
+  { name: "雅安市", value: 68 },
+  { name: "乐山市", value: 61 },
+  { name: "宜宾市", value: 58 },
+  { name: "巴中市", value: 44 },
+  { name: "成都市", value: 36 },
+];
 
 export default function Chart1() {
   return (

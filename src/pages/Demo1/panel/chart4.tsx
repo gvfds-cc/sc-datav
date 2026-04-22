@@ -3,8 +3,8 @@ import { LineChart } from "echarts/charts";
 import styled from "styled-components";
 import NumberAnimation from "@/components/numberAnimation";
 
-const colors = ["#fbdf88", "#ea580c"];
-const data = [270, 400, 380, 420, 300, 410, 400, 330, 210, 290];
+const colors = ["#86efac", "#16a34a"];
+const data = [120, 180, 220, 260, 300, 340, 380, 430, 470, 520];
 
 const Wrapper = styled.div`
   width: 100%;
@@ -32,10 +32,10 @@ const StatisticsNumber = styled(NumberAnimation)`
   gap: 4px;
   font-size: 28px;
   font-weight: 600;
-  color: #ea580c;
+  color: #16a34a;
 
   &::after {
-    content: "亿万元";
+    content: "万亩";
     display: inline-block;
     font-size: 12px;
     color: rgba(0, 0, 0, 0.7);
@@ -53,7 +53,7 @@ const Statistics1Number = styled(NumberAnimation)`
   font-size: 20px;
   font-weight: 600;
   margin-left: 16px;
-  color: #ea580c;
+  color: #16a34a;
 `;
 
 const CompanyIcon = styled.svg.attrs({
@@ -131,18 +131,18 @@ export default function Charts4() {
         }}
       />
       <Statistics>
-        <StatisticsTitle>收益总计</StatisticsTitle>
+        <StatisticsTitle>种植总面积</StatisticsTitle>
         <StatisticsNumber
-          value={99608}
+          value={126.8}
           options={{ minimumFractionDigits: 2, maximumFractionDigits: 2 }}
         />
       </Statistics>
       {Array.from({ length: 4 }, (_, k) => (
         <Statistics1 key={k}>
           <CompanyIcon />
-          企业数量
+          茶园数量
           <Statistics1Number
-            value={7792}
+            value={1230 + k * 136}
             options={{ maximumFractionDigits: 0 }}
           />
         </Statistics1>

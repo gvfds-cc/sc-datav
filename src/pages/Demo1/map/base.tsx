@@ -17,7 +17,6 @@ import { useConfigStore } from "../stores";
 
 import map from "@/assets/sc_map.png";
 import normalMap from "@/assets/sc_normal_map.png";
-import Heatmap from "./heatmap";
 
 export interface BaseProps {
   depth?: number;
@@ -132,11 +131,6 @@ export default function Base(props: BaseProps) {
           normalMap={texture2}
         />
       ))}
-      <Heatmap
-        renderOrder={11}
-        projection={projection}
-        position-z={depth + 1}
-      />
     </group>
   );
 }

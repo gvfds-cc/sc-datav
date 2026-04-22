@@ -12,13 +12,13 @@ type PieOption = ComposeOption<
   PieSeriesOption | TooltipComponentOption | LegendComponentOption
 >;
 
-const color = ["#fbdf88", "#ffa800", "#ff5b00", "#ff3000"];
+const color = ["#bbf7d0", "#86efac", "#4ade80", "#16a34a"];
 
 const trafficWay = [
-  { name: "第一季度", value: 20 },
-  { name: "第二季度", value: 10 },
-  { name: "第三季度", value: 30 },
-  { name: "第四季度", value: 40 },
+  { name: "绿茶", value: 42 },
+  { name: "红茶", value: 24 },
+  { name: "茉莉花茶", value: 18 },
+  { name: "黑茶", value: 16 },
 ];
 
 const data = trafficWay.reduce<PieSeriesOption["data"]>((pre, cur, i) => {
@@ -58,7 +58,7 @@ export default function Chart5() {
         legend: {
           icon: "circle",
           orient: "vertical",
-          data: ["第一季度", "第二季度", "第三季度", "第四季度"],
+          data: ["绿茶", "红茶", "茉莉花茶", "黑茶"],
           top: "middle",
           right: "10%",
           textStyle: {

@@ -7,11 +7,8 @@ import { useConfigStore } from "../stores";
 import Headder from "./headder";
 import Footer from "./footer";
 import Chart1 from "./chart1";
-import Chart2 from "./chart2";
-import Chart3 from "./chart3";
 import Chart4 from "./chart4";
 import Chart5 from "./chart5";
-import Chart6 from "./chart6";
 
 const GridWrapper = styled.div`
   flex: 1;
@@ -25,8 +22,8 @@ const GridWrapper = styled.div`
 
 const Card = styled.div`
   position: relative;
-  background: rgba(255, 245, 232, 0.65);
-  border: 1px solid rgba(255, 145, 0, 0.3);
+  background: rgba(232, 248, 238, 0.68);
+  border: 1px solid rgba(22, 163, 74, 0.3);
   position: relative;
   padding: 15px;
   backdrop-filter: blur(4px);
@@ -43,8 +40,8 @@ const Card = styled.div`
     left: -1px;
     width: 10px;
     height: 10px;
-    border-top: 2px solid #ea580c;
-    border-left: 2px solid #ea580c;
+    border-top: 2px solid #16a34a;
+    border-left: 2px solid #16a34a;
     transition: all 0.3s ease;
     pointer-events: none;
   }
@@ -56,8 +53,8 @@ const Card = styled.div`
     right: -1px;
     width: 10px;
     height: 10px;
-    border-bottom: 2px solid #ea580c;
-    border-right: 2px solid #ea580c;
+    border-bottom: 2px solid #16a34a;
+    border-right: 2px solid #16a34a;
     transition: all 0.3s ease;
     pointer-events: none;
   }
@@ -74,11 +71,11 @@ const CardTitle = styled.div`
   font-size: 18px;
   margin-bottom: 10px;
   padding-left: 10px;
-  border-left: 4px solid #fdb961;
+  border-left: 4px solid #22c55e;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #5a4a42;
+  color: #14532d;
 
   span {
     font-size: 10px;
@@ -90,11 +87,8 @@ const CardTitle = styled.div`
 export default function Content() {
   const topBox = useMoveTo("toBottom", 0.6);
   const leftBox = useMoveTo("toRight", 0.8, 0.5);
-  const leftBox1 = useMoveTo("toRight", 0.8, 0.6);
-  const leftBox2 = useMoveTo("toRight", 0.8, 0.7);
   const rightBox = useMoveTo("toLeft", 0.8, 0.5);
   const rightBox1 = useMoveTo("toLeft", 0.8, 0.6);
-  const rightBox2 = useMoveTo("toLeft", 0.8, 0.7);
   const bottomBox = useMoveTo("toTop", 0.8, 0.5);
 
   useEffect(() => {
@@ -105,11 +99,8 @@ export default function Content() {
           topBox.restart();
           bottomBox.restart();
           leftBox.restart();
-          leftBox1.restart();
-          leftBox2.restart();
           rightBox.restart();
           rightBox1.restart();
-          rightBox2.restart();
         }
       }
     );
@@ -120,19 +111,13 @@ export default function Content() {
         if (v) {
           topBox.restart();
           leftBox.restart();
-          leftBox1.restart();
-          leftBox2.restart();
           rightBox.restart();
           rightBox1.restart();
-          rightBox2.restart();
         } else {
           topBox.reverse();
           leftBox.reverse();
-          leftBox1.reverse();
-          leftBox2.reverse();
           rightBox.reverse();
           rightBox1.reverse();
-          rightBox2.reverse();
         }
       }
     );
@@ -147,41 +132,23 @@ export default function Content() {
     <AutoFit>
       <Headder ref={topBox.ref} />
       <GridWrapper>
-        <Card ref={leftBox.ref} style={{ gridArea: "1 / 1 / 3 / 2" }}>
+        <Card ref={leftBox.ref} style={{ gridArea: "1 / 1 / 7 / 2" }}>
           <CardTitle>
-            2025年规模指标分析<span>INDICATOR ANALYSIS</span>
+            重点产区茶叶种植规模<span>TEA PLANTING SCALE</span>
           </CardTitle>
           <Chart1 />
         </Card>
-        <Card ref={leftBox1.ref} style={{ gridArea: "3 / 1 / 5 / 2" }}>
+        <Card ref={rightBox.ref} style={{ gridArea: "1 / 4 / 4 / 5" }}>
           <CardTitle>
-            企业税收分析<span>TAX ANALYSIS</span>
-          </CardTitle>
-          <Chart2 />
-        </Card>
-        <Card ref={leftBox2.ref} style={{ gridArea: "5 / 1 / 7 / 2" }}>
-          <CardTitle>
-            行政处罚信息<span>PENALTY INFORMATION</span>
-          </CardTitle>
-          <Chart3 />
-        </Card>
-        <Card ref={rightBox.ref} style={{ gridArea: "1 / 4 / 3 / 5" }}>
-          <CardTitle>
-            企业收益总数统计<span>REVENUE STATISTICS</span>
+            茶叶种植统计<span>TEA PLANTING STATISTICS</span>
           </CardTitle>
           <Chart4 />
         </Card>
-        <Card ref={rightBox1.ref} style={{ gridArea: "3 / 4 / 5 / 5" }}>
+        <Card ref={rightBox1.ref} style={{ gridArea: "4 / 4 / 7 / 5" }}>
           <CardTitle>
-            企业能耗分析<span>ENERGY CONSUMPTION ANALYSIS</span>
+            茶类结构占比<span>TEA CATEGORY RATIO</span>
           </CardTitle>
           <Chart5 />
-        </Card>
-        <Card ref={rightBox2.ref} style={{ gridArea: "5 / 4 / 7 / 5" }}>
-          <CardTitle>
-            企业税收分析<span>TAX ANALYSIS</span>
-          </CardTitle>
-          <Chart6 />
         </Card>
       </GridWrapper>
       <Footer ref={bottomBox.ref} />

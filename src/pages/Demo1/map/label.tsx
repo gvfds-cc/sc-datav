@@ -7,7 +7,7 @@ const Label = styled(Html)`
   display: flex;
   background: #ffffff;
   border: 1px solid currentColor;
-  color: #fdb961;
+  color: #22c55e;
   font-size: 14px;
   padding-inline: 4px;
   border-radius: 4px;

@@ -6,7 +6,6 @@ interface ConfigStore {
   cloud: boolean;
   bar: boolean;
   rotation: boolean;
-  heat: boolean;
   mode: boolean;
   toggle: (key: keyof Omit<ConfigStore, "toggle">) => void;
   reset: () => void;
@@ -18,7 +17,6 @@ export const useConfigStore = create<ConfigStore>()(
     cloud: true,
     bar: true,
     rotation: true,
-    heat: true,
     mode: true,
     toggle: (key) => set((s) => ({ [key]: !s[key] })),
     reset: () => set(store.getInitialState()),

@@ -3,7 +3,7 @@ import { useImperativeHandle, useState, type Ref } from "react";
 import styled from "styled-components";
 
 const TooltipBox = styled.div`
-  background: rgba(255, 245, 232, 0.7);
+  background: rgba(232, 248, 238, 0.75);
   backdrop-filter: blur(10px);
   border-radius: 8px;
   padding: 12px 16px;
@@ -18,7 +18,7 @@ const TooltipBox = styled.div`
 const CityName = styled.div`
   font-weight: bold;
   margin-bottom: 8px;
-  color: #ea580c;
+  color: #16a34a;
 `;
 
 const DataItem = styled.div`

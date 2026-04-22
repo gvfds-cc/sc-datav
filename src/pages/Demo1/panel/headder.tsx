@@ -15,9 +15,9 @@ const Title = styled.div`
   font-size: 36px;
   letter-spacing: 8px;
   color: #fff;
-  text-shadow: 0 8px 10px rgba(255, 145, 0, 0.8);
+  text-shadow: 0 8px 10px rgba(22, 163, 74, 0.5);
   font-weight: 700;
-  background: linear-gradient(to bottom, #ea580c, #ff9100);
+  background: linear-gradient(to bottom, #16a34a, #22c55e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
@@ -28,9 +28,9 @@ const Title = styled.div`
     font-size: 12px;
     letter-spacing: 12px;
     text-align: center;
-    color: rgba(255, 145, 0, 0.6);
+    color: rgba(22, 163, 74, 0.7);
     margin-top: -5px;
-    -webkit-text-fill-color: rgba(255, 145, 0, 0.6);
+    -webkit-text-fill-color: rgba(22, 163, 74, 0.7);
   }
 `;
 
@@ -81,20 +81,20 @@ const Bg = styled.svg.attrs({
 
       <path
         d="M0,0 L1920,0 L1920,60 L1300,60 L1250,80 L670,80 L620,60 L0,60 Z"
-        fill="rgb(255, 245, 232)"
+        fill="rgb(233, 248, 239)"
       />
 
       <path
         d="M0,60 L620,60 L670,80 L1250,80 L1300,60 L1920,60"
         fill="none"
-        stroke="rgb(234, 88, 12)"
+        stroke="rgb(22, 163, 74)"
         strokeWidth="1"
       />
 
       <path
         d="M0,60 L620,60 L670,80 L960,80"
         fill="none"
-        stroke="#ff6715"
+        stroke="#16a34a"
         strokeWidth="4"
         mask="url(#svgline-1)"
       />
@@ -102,7 +102,7 @@ const Bg = styled.svg.attrs({
       <path
         d="M1920,60 L1300,60 L1250,80 L960,80"
         fill="none"
-        stroke="#ff6715"
+        stroke="#16a34a"
         strokeWidth="4"
         mask="url(#svgline-2)"
       />
@@ -146,7 +146,7 @@ export default function Headder(props: ComponentProps<typeof TitleWrapper>) {
   return (
     <TitleWrapper {...props}>
       <Bg />
-      <Title>四川省智慧城市数据大脑</Title>
+      <Title>四川省茶叶种植数据大屏</Title>
       <Github href="https://github.com/knight-L/datav" target="_blank" />
     </TitleWrapper>
   );

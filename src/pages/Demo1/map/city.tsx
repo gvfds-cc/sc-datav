@@ -1,5 +1,6 @@
 import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
+import { useNavigate } from "react-router";
 import {
   DoubleSide,
   Shape,
@@ -30,6 +31,7 @@ export interface CityProps
 
 export default function City(props: CityProps) {
   const { data, bbox, depth, map, normalMap } = props;
+  const navigate = useNavigate();
   const groupRef = useRef<Group>(null!);
   const tooltipRef = useRef<{ open: () => void; close: () => void }>(null!);
   const vector3 = useRef(new Vector3(1, 1, 1));
@@ -57,6 +59,18 @@ export default function City(props: CityProps) {
         vector3.current.setZ(1);
         tooltipRef.current.close();
         document.body.style.cursor = "auto";
+      }}
+      onClick={(e) => {
+        e.stopPropagation();
+        const detail = cityData[data.city as keyof typeof cityData];
+        navigate(`/demo1/region/${encodeURIComponent(data.city)}`, {
+          state: {
+            city: data.city,
+            population: detail?.population ?? 0,
+            gdp: detail?.gdp ?? "暂无数据",
+            area: detail?.area ?? "暂无数据",
+          },
+        });
       }}>
       <ShapeMesh position-z={depth + 0.1} bbox={bbox} args={[shape]}>
         <meshStandardMaterial map={map} normalMap={normalMap} />

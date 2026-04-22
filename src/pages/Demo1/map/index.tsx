@@ -19,7 +19,7 @@ export default function Index() {
         shadows
         camera={{ position: [-50, 125, 250], fov: 50, far: 2000, near: 1 }}
         dpr={[1, 2]}>
-        <color attach="background" args={["#fff5e8"]} />
+        <color attach="background" args={["#e8f8ee"]} />
         <Lights />
 
         <Scene />
