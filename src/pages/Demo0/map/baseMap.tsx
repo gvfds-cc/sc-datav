@@ -13,17 +13,16 @@ import ShapeBox from "./shape";
 import type { GeoProjection } from "d3-geo";
 import type { CityGeoJSON } from "@/types/map";
 
-import scMapData from "@/assets/sc.json";
-import textureMap from "@/assets/sc_map.png";
-import scNormalMap from "@/assets/sc_normal_map.png";
-import scDisplacementMap from "@/assets/sc_displacement_map.png";
+import hbMapData from "@/assets/hb.json";
+import textureMap from "@/assets/hb_map.png";
+import hbDisplacementMap from "@/assets/hb_displacement_map.png";
 
-const data = scMapData as CityGeoJSON;
+const data = hbMapData as CityGeoJSON;
 
 export default function BaseMap({ projection }: { projection: GeoProjection }) {
   const newStyle = useMapStyleStore((s) => s.newStyle);
   const [texture1, texture2, texture3] = useTexture(
-    [textureMap, scNormalMap, scDisplacementMap],
+    [textureMap, hbDisplacementMap],
     (tex) =>
       tex.forEach((el) => {
         el.wrapS = el.wrapT = RepeatWrapping;

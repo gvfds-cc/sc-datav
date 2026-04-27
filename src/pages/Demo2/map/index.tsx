@@ -9,11 +9,11 @@ import Bottom from "./bottom";
 import BeamLight from "./beamLight";
 import type { CityGeoJSON } from "@/types/map";
 
-import scMapData from "@/assets/sc.json";
-import scOutlineData from "@/assets/sc_outline.json";
+import hbMapData from "@/assets/hb.json";
+import hbOutlineData from "@/assets/hb_outline.json";
 
-const mapData = scMapData as CityGeoJSON,
-  outlineData = scOutlineData as CityGeoJSON;
+const mapData = hbMapData as CityGeoJSON,
+  outlineData = hbOutlineData as CityGeoJSON;
 
 const CanvasWrapper = styled.div`
   position: absolute;

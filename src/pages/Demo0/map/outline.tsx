@@ -5,7 +5,7 @@ import { useControls } from "leva";
 import { Color, Shape, Vector2, type IUniform } from "three";
 import { type GeoProjection } from "d3-geo";
 
-import scOutlineData from "@/assets/sc_outline.json";
+import hbOutlineData from "@/assets/hb_outline.json";
 
 export function OutLineAnimated() {
   const controls = useControls({
@@ -97,7 +97,7 @@ export function OutLineAnimated() {
 export default function OutLine({ projection }: { projection: GeoProjection }) {
   return (
     <group renderOrder={1}>
-      {scOutlineData.features.map((feature) =>
+      {hbOutlineData.features.map((feature) =>
         feature.geometry.coordinates[0].map((coordinates, coordinatesIndex) => (
           <Extrude
             key={`${feature.properties.name}--${coordinatesIndex}`}

@@ -15,8 +15,7 @@ import City, { type CityProps } from "./city";
 import loadTexture from "../helpers/loadTexture";
 import { useConfigStore } from "../stores";
 
-import map from "@/assets/sc_map.png";
-import normalMap from "@/assets/sc_normal_map.png";
+import map from "@/assets/hb_map.png";
 
 export interface BaseProps {
   depth?: number;
@@ -28,9 +27,6 @@ const textures = Promise.all([
   loadTexture(map, (tex) => {
     tex.wrapS = tex.wrapT = RepeatWrapping;
   }),
-  loadTexture(normalMap, (tex) => {
-    tex.wrapS = tex.wrapT = RepeatWrapping;
-  }),
 ]);
 
 export default function Base(props: BaseProps) {
@@ -38,7 +34,7 @@ export default function Base(props: BaseProps) {
   const groupRef = useRef<Group>(null!);
   const camera = useThree((state) => state.camera);
 
-  const [texture1, texture2] = use(textures);
+  const [texture1] = use(textures);
 
   const projection = useMemo(() => {
     return geoMercator()
@@ -128,7 +124,6 @@ export default function Base(props: BaseProps) {
           bbox={bbox}
           data={region}
           map={texture1}
-          normalMap={texture2}
         />
       ))}
     </group>

@@ -146,7 +146,7 @@ export default function Headder(props: ComponentProps<typeof TitleWrapper>) {
   return (
     <TitleWrapper {...props}>
       <Bg />
-      <Title>四川省茶叶种植数据大屏</Title>
+      <Title>湖北省茶叶种植数据大屏</Title>
       <Github href="https://github.com/knight-L/datav" target="_blank" />
     </TitleWrapper>
   );
